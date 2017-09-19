@@ -291,7 +291,7 @@ struct transition
     {
         using namespace date;
         using namespace std::chrono;
-        os << t.timepoint << "Z ";
+        date::operator<<(os, t.timepoint) << "Z ";
         if (t.info->offset >= seconds{0})
             os << '+';
         os << make_time(t.info->offset);
